@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LASHKARS STORE | Men's Fashion</title>
+
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="header">
+
+
+<div class="logo-area">
+
+<img src="logo.png" class="logo">
+
+
+<div>
+<h1>LASHKARS STORE</h1>
+<p>Men's Fashion | Shoes | Watches | Wallets</p>
+</div>
+
+
+</div>
+
+
+
+<nav class="navbar">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="Products.html">
+Products
+</a>
+
+<a href="About.html">
+About
+</a>
+
+<a href="Contact.html">
+Contact
+</a>
+
+
+<button class="cart-btn" onclick="openCart()">
+
+🛒 Cart 
+<span id="cartCount">0</span>
+
+</button>
+
+</nav>
+
+</header>
+<!-- PRODUCTS SECTION -->
+
+<section id="products" class="products">
+
+ 
+<h2>
+Our Latest Products
+</h2>
+
+
+
+<div class="product-grid">
+
+
+
+<!-- Product 1 -->
+
+<div class="product-card">
+
+
+<img src="clothes.png"
+alt="Premium Shirt">
+
+
+<h3>
+Premium Cotton Shirt
+</h3>
+
+
+<p class="price">
+Rs. 1200
+</p>
+
+
+
+<button onclick="addCart('Premium Cotton Shirt',1200)">
+ADD TO CART 🛒
+</button>
+
+<button onclick="openOrder('Premium Cotton Shirt',1200)">
+BUY NOW 🚀
+</button>
+
+</div>
+
+
+
+
+
+<!-- Product 2 -->
+
+
+<div class="product-card">
+
+
+<img src="Summer Shirts.png"
+alt="Casual Shirt">
+
+
+<h3>
+Casual Summer Shirt
+</h3>
+
+
+<p class="price">
+Rs. 950
+</p>
+
+
+
+<button onclick="addCart('Casual Summer Shirt',950)">
+ADD TO CART 🛒
+</button>
+
+<button onclick="openOrder('Casual Summer Shirt',950)">
+BUY NOW 🚀
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Product 3 -->
+
+
+<div class="product-card">
+
+
+<img src="Premium Sports Shoes NIKE.png"
+alt="Shoes">
+
+
+<h3>
+Premium Sports Shoes
+</h3>
+
+
+<p class="price">
+Rs. 2250
+</p>
+
+
+
+<button onclick="addCart('Premium Sports Shoes',2250)">
+ADD TO CART 🛒
+</button>
+
+<button onclick="openOrder('Premium Sports Shoes',2250)">
+BUY NOW 🚀
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Product 4 -->
+
+
+<div class="product-card">
+
+
+<img src="Mens Leather Watches Skeleton Double Sided.png"
+alt="Watch">
+
+
+<h3>
+Luxury Watch
+</h3>
+
+
+<p class="price">
+Rs. 2000
+</p>
+
+
+
+<button onclick="addCart('Luxury Watch',2000)">
+ADD TO CART 🛒
+</button>
+
+<button onclick="openOrder('Luxury Watch',2000)">
+BUY NOW 🚀
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- Product 5 -->
+
+
+<div class="product-card">
+
+
+<img src="wallet1.png"
+alt="Wallet">
+
+
+<h3>
+Leather Wallet
+</h3>
+
+
+<p class="price">
+Rs. 500
+</p>
+
+
+
+<button onclick="addCart('Leather Wallet',500)">
+ADD TO CART 🛒
+</button>
+
+<button onclick="openOrder('Leather Wallet',500)">
+BUY NOW 🚀
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+<!-- ORDER MODAL -->
+
+
+<div id="orderModal" class="modal">
+
+
+<div class="modal-box">
+
+
+<span class="close" onclick="closeOrder()">
+×
+</span>
+
+
+
+<h2>
+Confirm Order
+</h2>
+
+
+
+<p id="productName"></p>
+
+
+
+
+<form action="https://formspree.io/f/xpqegqqd" method="POST">
+
+
+<input 
+type="hidden"
+name="Product"
+id="productInput">
+
+
+
+<input 
+type="hidden"
+name="Price"
+id="priceInput">
+
+
+
+
+
+<input 
+type="text"
+name="Customer Name"
+placeholder="Full Name"
+required>
+
+
+
+
+<input 
+type="tel"
+name="WhatsApp Number"
+placeholder="WhatsApp Number"
+required>
+
+
+
+
+<textarea name="Address" placeholder="Full Delivery Address" required> </textarea> <hr> <h3>💳 Payment Method</h3> <label> <input type="radio" name="Payment Method" value="Cash On Delivery" checked> Cash On Delivery </label> <br><br> <label> <input type="radio" name="Payment Method" value="EasyPaisa"> EasyPaisa </label> <br> <label> <input type="radio" name="Payment Method" value="JazzCash"> JazzCash </label> <br><br> <div style="background:#fff7d6;padding:15px;border-radius:12px;border:2px solid #ffd400;"> <h3 style="margin-top:0;color:#008000;">💰 Payment Details</h3> <b>👤 Account Name</b><br> Muhammad Khateeb Ejaz <br><br> <b>📱 EasyPaisa Number</b><br> 03496550742 <!-- Agar baad mein JazzCash use karna ho to ye uncomment kar dena <br><br> <b>💳 JazzCash Number</b><br> 03XX-XXXXXXX --> <br><br> <b>🚚 Delivery Charges</b><br> Rs. 280 <br><br> <small style="color:#d32f2f;font-weight:bold;"> ⚠️ Cash on Delivery ke liye sirf Delivery Charges pehle send karein.<br> Baqi payment parcel receive karte waqt deni hogi. </small> </div> <br> <label>Transaction ID</label> <input type="text" name="Transaction ID" placeholder="Enter Transaction ID"> <label>Upload Payment Screenshot</label> <input type="file" name="Payment Screenshot" accept="image/*"> <br><br> <button type="submit"> 🚀 PLACE ORDER </button>
+
+
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+ 
+
+<!-- CART MODAL -->
+
+<div id="cartModal" class="modal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeCart()">
+×
+</span>
+
+<h2>
+Your Cart 🛒
+</h2>
+
+<input
+type="text"
+id="customerName"
+placeholder="Your Name">
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="WhatsApp Number">
+
+<br><br>
+
+<div id="cartItems">
+
+Your cart is empty
+
+</div>
+
+<button onclick="closeCart()">
+Continue Shopping
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+ 
+ 
+<!-- FEATURES -->
+
+
+<section class="features">
+
+
+<div>
+🛡
+<h3>
+Secure Payment
+</h3>
+<p>
+100% Safe Checkout
+</p>
+</div>
+
+
+
+<div>
+🚚
+<h3>
+Fast Delivery
+</h3>
+<p>
+Quick Doorstep Delivery
+</p>
+</div>
+
+
+
+
+<div>
+🔄
+<h3>
+Easy Return
+</h3>
+<p>
+Customer Friendly
+</p>
+</div>
+
+
+
+
+<div>
+🎧
+<h3>
+24/7 Support
+</h3>
+<p>
+Always Available
+</p>
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<h2>
+LASHKARS STORE
+</h2>
+
+
+<p>
+Men's Fashion | Shoes | Watches | Wallets
+</p>
+
+
+<p>
+© 2026 LASHKARS STORE
+</p>
+
+
+<p>
+Developed by Muhammad Khateeb Ejaz
+</p>
+
+
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
