@@ -42,38 +42,43 @@ function openOrder(product, price){
 
     document.body.style.overflow = "hidden";
 
-    transactionField.style.display = "none";
-    screenshotField.style.display = "none";
-    transactionLabel.style.display = "none";
-    screenshotLabel.style.display = "none";
 
-    paymentRadios.forEach(radio => {
 
-        radio.onchange = function(){
 
-            if(this.value === "Cash On Delivery"){
 
-                transactionField.style.display = "none";
-                screenshotField.style.display = "none";
-                transactionLabel.style.display = "none";
-                screenshotLabel.style.display = "none";
+transactionField.style.display = "none";
+screenshotField.style.display = "none";
+transactionLabel.style.display = "none";
+screenshotLabel.style.display = "none";
 
-            }else{
+paymentRadios.forEach(radio => {
 
-                transactionField.style.display = "block";
-                screenshotField.style.display = "block";
-                transactionLabel.style.display = "block";
-                screenshotLabel.style.display = "block";
+    radio.onchange = function(){
 
-            }
+        if(this.value === "Cash On Delivery"){
 
-        };
+            transactionField.style.display = "none";
+            screenshotField.style.display = "none";
+            transactionLabel.style.display = "none";
+            screenshotLabel.style.display = "none";
 
-    });
+        }else{
 
-    paymentRadios[0].checked = true;
-}
+            transactionField.style.display = "block";
+            screenshotField.style.display = "block";
+            transactionLabel.style.display = "block";
+            screenshotLabel.style.display = "block";
 
+        }
+
+    };
+
+});
+
+paymentRadios[0].checked = true;
+
+
+    
 
 // Close Order Popup
 
