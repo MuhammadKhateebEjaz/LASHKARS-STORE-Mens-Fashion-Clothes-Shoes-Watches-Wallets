@@ -77,7 +77,7 @@ paymentRadios.forEach(radio => {
 
 paymentRadios[0].checked = true;
 
-
+}
     
 
 // Close Order Popup
@@ -248,7 +248,7 @@ window.onclick = function(event){
     if(event.target == modal){
 
         closeOrder();
-    }2
+    }
 
     if(event.target ==
         document.getElementById("cartModal")){
