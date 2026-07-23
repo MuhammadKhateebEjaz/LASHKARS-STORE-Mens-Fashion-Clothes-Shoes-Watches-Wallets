@@ -336,7 +336,36 @@ required>
 
 <textarea name="Address" placeholder="Full Delivery Address" required> 
 </textarea> <hr> <h3>💳 Payment Method</h3> 
- <label> <input type="radio" name="Payment Method" value="Cash On Delivery" checked> Cash On Delivery </label> <br><br> <label> <input type="radio" name="Payment Method" value="EasyPaisa"> EasyPaisa </label> <br> <label> <input type="radio" name="Payment Method" value="JazzCash"> JazzCash </label> <br><br> <div class="payment-box">>💰 Payment Details</h3> <b>👤 Account Name</b><br> Muhammad Khateeb Ejaz <br><br> <b>📱 EasyPaisa Number</b><br> 03496550742 <!-- Agar baad mein JazzCash use karna ho to ye uncomment kar dena <br><br> <b>💳 JazzCash Number</b><br> 03XX-XXXXXXX --> <br><br> <b>🚚 Delivery Charges</b><br> Rs. 280 <br><br> <small style="color:#d32f2f;font-weight:bold;"> ⚠️ Cash on Delivery ke liye sirf Delivery Charges pehle send karein.<br> Baqi payment parcel receive karte waqt deni hogi. </small> </div> <br> <label>Transaction ID</label> <input type="text" name="Transaction ID" placeholder="Enter Transaction ID"> <label>Upload Payment Screenshot</label> <input type="file" name="Payment Screenshot" accept="image/*"> <br><br> <button type="submit"> 🚀 PLACE ORDER </button>
+ <label> <input type="radio" name="Payment Method" value="Cash On Delivery" checked> 
+  Cash On Delivery 
+ </label> 
+ <br><br> 
+ <label> <input type="radio" name="Payment Method" value="EasyPaisa"> 
+  EasyPaisa 
+ </label> 
+ <br> 
+ 
+ <label> 
+  <input type="radio" name="Payment Method" value="JazzCash">
+  JazzCash
+ </label> 
+ <br><br> 
+ <div class="payment-box">💰 Payment Details</h3>
+  <b>👤 Account Name</b><br>
+  Muhammad Khateeb Ejaz 
+  <br><br> 
+  <b>📱 EasyPaisa Number</b><br> 03496550742 <!-- Agar baad mein JazzCash use karna ho to ye uncomment kar dena <br><br> <b>💳 JazzCash Number</b><br> 03XX-XXXXXXX --> 
+  <br><br> 
+  <b>🚚 Delivery Charges</b><br> Rs. 280 <br><br> <small style="color:#d32f2f;font-weight:bold;"> ⚠️ Cash on Delivery ke liye sirf Delivery Charges pehle send karein.<br> Baqi payment parcel receive karte waqt deni hogi. </small> </div> <br> 
+<label id="transactionLabel">
+Transaction ID
+</label>
+ 
+ <input type="text" name="Transaction ID" placeholder="Enter Transaction ID"> 
+ <label id="screenshotLabel">
+Upload Payment Screenshot
+</label> 
+ <input type="file" name="Payment Screenshot" accept="image/*"> <br><br> <button type="submit"> 🚀 PLACE ORDER </button>
 
 
 
